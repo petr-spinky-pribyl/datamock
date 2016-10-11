@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definition xmlns="http://datamock.spi.cz"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://datamock.spi.cz datamock.xsd">
+	<rowset name="emp">
+		<strategy xsi:type="simpleTableStrategyType" tableName="emp"/>
+		<attribute name="empno" datatype="NUMBER">
+			<strategy xsi:type="sequenceStrategyType" start="1" percentage="100"/>
+		</attribute>
+		<attribute name="ename" datatype="STRING">
+			<strategy xsi:type="randomStringStrategyType" minimumSize="5" maximumSize="10"/>
+		</attribute>
+	</rowset>
+</definition>

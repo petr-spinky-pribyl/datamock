@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://datamock.spi.cz"
+	xmlns:tns="http://datamock.spi.cz" elementFormDefault="qualified">
+
+	<element name="definition" type="tns:definitionType"></element>
+
+	<complexType name="definitionType">
+		<sequence>
+			<element name="rowset" type="tns:rowsetType" maxOccurs="unbounded"
+				minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="rowsetType">
+		<sequence>
+			<element name="strategy" type="tns:strategyType" />
+			<element name="attribute" type="tns:attributeType" maxOccurs="unbounded"
+				minOccurs="0">
+			</element>
+		</sequence>
+		<attribute name="name" type="string"></attribute>
+	</complexType>
+
+
+	<complexType name="attributeType">
+		<sequence>
+			<element name="strategy" type="tns:strategyType"></element>
+		</sequence>
+		<attribute name="name" type="string"></attribute>
+		<attribute name="datatype" type="tns:dataType"></attribute>
+	</complexType>
+
+	<simpleType name="dataType">
+		<restriction base="string">
+			<enumeration value="STRING"/>
+			<enumeration value="DATE"/>
+			<enumeration value="NUMBER"/>
+			<enumeration value="ROW"/>
+			<enumeration value="ROWSET"/>
+		</restriction>
+	</simpleType>
+
+	<complexType name="strategyType">
+		<attribute name="percentage" type="int"/>
+	</complexType>
+
+	<complexType name="simpleTableStrategyType">
+		<complexContent>
+			<extension base="tns:strategyType">
+				<attribute name="tableName" type="string"></attribute>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="sequenceStrategyType">
+		<complexContent>
+			<extension base="tns:strategyType">
+				<attribute name="start" type="int"></attribute>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="randomStringStrategyType">
+		<complexContent>
+			<extension base="tns:strategyType">
+				<attribute name="minimumSize" type="int"></attribute>
+				<attribute name="maximumSize" type="int"></attribute>
+			</extension>
+		</complexContent>
+	</complexType>
+</schema>
