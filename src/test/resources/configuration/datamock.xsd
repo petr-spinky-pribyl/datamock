@@ -68,4 +68,31 @@
 			</extension>
 		</complexContent>
 	</complexType>
+
+	<complexType name="constantStrategyType">
+		<complexContent>
+			<extension base="tns:strategyType">
+				<attribute name="constantString" type="string"></attribute>
+				<attribute name="constantNumber" type="decimal"></attribute>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="dateProbabilityDistributionStrategyType">
+		<complexContent>
+			<extension base="tns:strategyType">
+				<sequence>
+					<element name="monthRate" type="tns:monthRateType" maxOccurs="unbounded"/>
+				</sequence>
+				<attribute name="yearFrom" type="int"/>
+				<attribute name="yearTo" type="int"/>
+			</extension>
+		</complexContent>
+	</complexType>
+	
+	<complexType name="monthRateType">
+		<attribute name="month" type="int"/>
+		<attribute name="rate" type="int"/>
+	</complexType>
+	
 </schema>

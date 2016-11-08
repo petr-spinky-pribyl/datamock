@@ -2,12 +2,14 @@ package cz.spi.datamock.output;
 
 import java.io.IOException;
 import java.io.PrintStream;
+import java.text.SimpleDateFormat;
 
 import cz.spi.datamock.data.Attribute;
 import cz.spi.datamock.data.MockData;
 import cz.spi.datamock.data.Row;
 import cz.spi.datamock.data.RowSet;
 import cz.spi.datamock.data.datatypes.AttributeDataType;
+import cz.spi.datamock.data.datatypes.DateType;
 import cz.spi.datamock.data.datatypes.IDataType;
 import cz.spi.datamock.data.datatypes.NumberType;
 import cz.spi.datamock.data.datatypes.StringType;
@@ -79,8 +81,10 @@ public class TextFileDataWriter implements IDataWriter {
 	}
 
 	private void writeValue(IDataType data, AttributeDataType dataType) {
+		SimpleDateFormat format = new SimpleDateFormat("dd.MM.YYYY");
+		
 		switch(dataType) {
-		case DATE:
+		case DATE: ps.print(format.format(((DateType)data).getDate()));
 			break;
 		case NUMBER: ps.print(((NumberType)data).getNumber().toString());
 			break;

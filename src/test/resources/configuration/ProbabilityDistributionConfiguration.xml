@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definition xmlns="http://datamock.spi.cz"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://datamock.spi.cz datamock.xsd">
+	<rowset name="dates">
+		<strategy xsi:type="simpleTableStrategyType" tableName="emp"/>
+		<attribute name="customer" datatype="STRING">
+			<strategy xsi:type="constantStrategyType" constantString="Petr Přibyl"/>
+		</attribute>
+		<attribute name="zipCode" datatype="STRING">
+			<strategy xsi:type="constantStrategyType" constantString="34561"/>
+		</attribute>
+		<attribute name="machine" datatype="STRING">
+			<strategy xsi:type="constantStrategyType" constantString="terra"/>
+		</attribute>
+		<attribute name="run" datatype="DATE">
+			<strategy xsi:type="dateProbabilityDistributionStrategyType" yearFrom="2010" yearTo="2015">
+				<monthRate month="1" rate="10"/>
+				<monthRate month="2" rate="5"/>
+				<monthRate month="3" rate="5"/>
+				<monthRate month="4" rate="30"/>
+				<monthRate month="5" rate="40"/>
+				<monthRate month="6" rate="40"/>
+				<monthRate month="7" rate="20"/>
+				<monthRate month="8" rate="20"/>
+				<monthRate month="9" rate="30"/>
+				<monthRate month="10" rate="20"/>
+				<monthRate month="11" rate="5"/>
+				<monthRate month="12" rate="0"/>
+			</strategy>
+		</attribute>
+	</rowset>
+</definition>

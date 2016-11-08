@@ -8,6 +8,7 @@
 
 package cz.spi.datamock.configuration.xml;
 
+import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -15,16 +16,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for randomStringStrategyType complex type.
+ * <p>Java class for constantStrategyType complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="randomStringStrategyType">
+ * &lt;complexType name="constantStrategyType">
  *   &lt;complexContent>
  *     &lt;extension base="{http://datamock.spi.cz}strategyType">
- *       &lt;attribute name="minimumSize" type="{http://www.w3.org/2001/XMLSchema}int" />
- *       &lt;attribute name="maximumSize" type="{http://www.w3.org/2001/XMLSchema}int" />
+ *       &lt;attribute name="constantString" type="{http://www.w3.org/2001/XMLSchema}string" />
+ *       &lt;attribute name="constantNumber" type="{http://www.w3.org/2001/XMLSchema}decimal" />
  *     &lt;/extension>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -33,62 +34,62 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "randomStringStrategyType")
-public class RandomStringStrategyType
+@XmlType(name = "constantStrategyType")
+public class ConstantStrategyType
     extends StrategyType
 {
 
-    @XmlAttribute(name = "minimumSize")
-    protected Integer minimumSize;
-    @XmlAttribute(name = "maximumSize")
-    protected Integer maximumSize;
+    @XmlAttribute(name = "constantString")
+    protected String constantString;
+    @XmlAttribute(name = "constantNumber")
+    protected BigDecimal constantNumber;
 
     /**
-     * Gets the value of the minimumSize property.
+     * Gets the value of the constantString property.
      * 
      * @return
      *     possible object is
-     *     {@link Integer }
+     *     {@link String }
      *     
      */
-    public Integer getMinimumSize() {
-        return minimumSize;
+    public String getConstantString() {
+        return constantString;
     }
 
     /**
-     * Sets the value of the minimumSize property.
+     * Sets the value of the constantString property.
      * 
      * @param value
      *     allowed object is
-     *     {@link Integer }
+     *     {@link String }
      *     
      */
-    public void setMinimumSize(Integer value) {
-        this.minimumSize = value;
+    public void setConstantString(String value) {
+        this.constantString = value;
     }
 
     /**
-     * Gets the value of the maximumSize property.
+     * Gets the value of the constantNumber property.
      * 
      * @return
      *     possible object is
-     *     {@link Integer }
+     *     {@link BigDecimal }
      *     
      */
-    public Integer getMaximumSize() {
-        return maximumSize;
+    public BigDecimal getConstantNumber() {
+        return constantNumber;
     }
 
     /**
-     * Sets the value of the maximumSize property.
+     * Sets the value of the constantNumber property.
      * 
      * @param value
      *     allowed object is
-     *     {@link Integer }
+     *     {@link BigDecimal }
      *     
      */
-    public void setMaximumSize(Integer value) {
-        this.maximumSize = value;
+    public void setConstantNumber(BigDecimal value) {
+        this.constantNumber = value;
     }
 
 }

@@ -11,20 +11,20 @@ package cz.spi.datamock.configuration.xml;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for strategyType complex type.
+ * <p>Java class for monthRateType complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="strategyType">
+ * &lt;complexType name="monthRateType">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="percentage" type="{http://www.w3.org/2001/XMLSchema}int" />
+ *       &lt;attribute name="month" type="{http://www.w3.org/2001/XMLSchema}int" />
+ *       &lt;attribute name="rate" type="{http://www.w3.org/2001/XMLSchema}int" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -33,41 +33,60 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "strategyType")
-@XmlSeeAlso({
-    SequenceStrategyType.class,
-    RandomStringStrategyType.class,
-    DateProbabilityDistributionStrategyType.class,
-    ConstantStrategyType.class,
-    SimpleTableStrategyType.class
-})
-public class StrategyType {
+@XmlType(name = "monthRateType")
+public class MonthRateType {
 
-    @XmlAttribute(name = "percentage")
-    protected Integer percentage;
+    @XmlAttribute(name = "month")
+    protected Integer month;
+    @XmlAttribute(name = "rate")
+    protected Integer rate;
 
     /**
-     * Gets the value of the percentage property.
+     * Gets the value of the month property.
      * 
      * @return
      *     possible object is
      *     {@link Integer }
      *     
      */
-    public Integer getPercentage() {
-        return percentage;
+    public Integer getMonth() {
+        return month;
     }
 
     /**
-     * Sets the value of the percentage property.
+     * Sets the value of the month property.
      * 
      * @param value
      *     allowed object is
      *     {@link Integer }
      *     
      */
-    public void setPercentage(Integer value) {
-        this.percentage = value;
+    public void setMonth(Integer value) {
+        this.month = value;
+    }
+
+    /**
+     * Gets the value of the rate property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
+     */
+    public Integer getRate() {
+        return rate;
+    }
+
+    /**
+     * Sets the value of the rate property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    public void setRate(Integer value) {
+        this.rate = value;
     }
 
 }
