@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<majitel>
+	<id>1</id>
+	<jmeno>František</jmeno>
+	<prijmeni>Vomáčka</prijmeni>
+	<psc>34561</psc>
+	<stroj>
+		<id>1</id>
+		<druh>sekačka</druh>
+		<typ>alko br520</typ>
+		<beh>
+			<start>2016-12-01T08:00:00</start>
+			<konec>2016-12-01T08:05:30</konec>
+			<otacek>30215</otacek>
+		</beh>
+		<beh>
+			<start>2016-12-01T08:10:00</start>
+			<konec>2016-12-01T08:25:12</konec>
+			<otacek>95350</otacek>
+		</beh>
+	</stroj>
+</majitel>
